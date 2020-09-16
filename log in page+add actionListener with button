@@ -1,0 +1,208 @@
+import java.awt.*;
+import java.util.Scanner;
+import java.awt.event.*;
+import javax.swing.*;
+
+class log extends JFrame  {
+//   Container container;
+	 Font font;
+	 JTextArea area;
+	
+	 
+	JRadioButton rbutton[]=new JRadioButton[5];
+	JButton but,nextB,prevB;
+	JLabel reg,name,id;                 
+	ButtonGroup bgroup;
+	
+	
+	//bgroup = new ButtonGroup();
+	JTextField user,roll;
+	//JRadioButton rbutton[]=new JRadioButton[4];
+
+	int question = 1, count = 0;
+	
+	
+		 Container container;
+
+
+   log()
+   {
+   	bgroup = new ButtonGroup();
+   	for(int i=0;i<4;i++)
+		{
+			rbutton[i]=new JRadioButton();	
+			add(rbutton[i]);
+			 bgroup.add(rbutton[i]);
+		}
+	
+   	    
+   	
+		nextB=new JButton ("Next");
+		prevB=new JButton("Previous");
+
+		
+	
+		setSize(600,350);
+   
+	
+	
+		
+	
+	   
+	//	container = this.getContentPane();
+	
+	 	container = this.getContentPane();
+	//	container1 = this.getContentPane();
+			
+		container.setBackground(Color.blue);
+		container.setLayout(null);
+		//container1.setBackground(Color.green);
+	//	container1.setLayout(null);
+		font = new Font("Tahoma",Font.BOLD,22);
+		but = new JButton("Start Exam");
+		
+     	but.setBounds(230,280,250,50);
+     but.setBackground(Color.yellow);
+    // but.addActionListener(this);
+     	 container.add(but);
+     	 reg = new JLabel("Regestration Page");
+         reg.setForeground(Color.green);
+         reg.setBounds(200,28,250,50);
+         reg.setFont(font);
+        name = new JLabel("User Name");
+        name.setForeground(Color.green);
+         name.setBounds(39,82,250,50);
+         name.setFont(font);
+           	id = new JLabel("ID :");
+         id.setForeground(Color.green);
+        id.setBounds(39,160,250,50);
+        id.setFont(font);
+   
+   
+     
+     	 container.add(reg);
+     	 container.add(name);
+     	 container.add(id);
+     	 
+     	 user = new JTextField();
+     	 user.setBounds(230,89,310,40);
+     	 user.setFont(font);
+     	 container.add(user);
+     	 roll = new JTextField();
+     	 roll.setBounds(230,170,310,40);
+     	 roll.setFont(font);
+     	 container.add(roll);
+     	// area = new JTextArea();
+		// area.setBounds(10,340,200,200);
+		// area.setBackground(Color.green);
+	
+   
+		 
+      but.addActionListener(new ActionListener() {
+		 	
+		 	
+		 		public void actionPerformed(ActionEvent e)
+		 	{
+		 		    Frame f = new Frame();
+
+   			for(int i=0;i<4;i++)
+		{
+			rbutton[i]=new JRadioButton();	
+			add(rbutton[i]);
+			 bgroup.add(rbutton[i]);
+		}
+	      // ButtonGroup.getContentpane(f);
+		 		    f.setSize(650,700);
+		 		   
+		 		    	rbutton[0].setBounds(50,80,120,20);
+		     rbutton[1].setBounds(50,110,120,20);
+	   	  rbutton[2].setBounds(50,140,120,20);
+	     	rbutton[3].setBounds(50,170,120,20);
+
+	     	nextB.setBounds(100,240,100,30);
+		   prevB.setBounds(270,240,100,30);
+	     
+		        setLayout(null);
+		        area = new JTextArea();
+	         	 area.setBounds(1,1,750,700);
+		       area.setBackground(Color.green);
+   
+		 		     
+		 		
+		 		      area.add(nextB);
+		 		      area.add(prevB);
+		 		      // nextB.addActionListener(this);
+		 		         f.add(area);
+		                  quiz();
+		                  area.setFont(font);
+		                  f.setVisible(true); 
+		 	}
+		 //	)};
+   
+		                 //	public void actionPerformed(ActionEvent e)
+		                 //	{
+		                 		
+		                 //	}
+      });
+   }
+		 		  
+		 	
+
+   
+
+		 
+	
+		 
+		 
+	
+
+	
+
+		 		 
+
+
+			
+		
+		
+	
+		void quiz()
+	{
+	//	rbutton[].setSelected(true);
+
+	
+	
+	
+		if(question==1)
+		{
+			
+	
+         	area.setText("Que1:Which one is the Independence day of Bangladesh");
+			rbutton[0].setText("16 December");
+			area.add(rbutton[0]);
+			rbutton[1].setText("21 Febuary");
+			area.add(rbutton[1]);
+			rbutton[2].setText("26 March");
+			area.add(rbutton[2]);
+			rbutton[3].setText("7 March");	
+				area.add(rbutton[3]);
+		}
+	
+	}
+	
+   
+	
+
+public static void main(String args[])
+{
+	 log frame = new log();
+	frame.setVisible(true);
+		frame.setBounds(100,50,600,650);
+     	frame.setSize(750,700);
+     
+}
+   }
+
+  
+
+
+
