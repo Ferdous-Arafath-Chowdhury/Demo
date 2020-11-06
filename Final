@@ -1,0 +1,699 @@
+import java.awt.*;
+import java.util.Scanner;
+import java.io.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+//import javax.swing.Timer;
+import java.util.Timer; 
+import java.util.TimerTask; 
+
+
+
+/*
+class file 
+{
+	 
+	 public static void main(String args[]) throws Exception {
+	
+	 	File f = new File("C:\\Users\\Lenovo\\Desktop\\PW1\\ID.txt");
+		BufferedReader reader = new BufferedReader(new FileReader(f));
+		int arr[];
+    arr = new int[20];
+	       for( int i = 0;i<8;i++)
+    {
+        arr[i] = Integer.parseInt(reader.readLine());                                            
+    }
+   
+	 }
+		
+	
+}
+*/
+class clock extends TimerTask 
+{ 
+	public static int i = 0; 
+	public void run() 
+	{ 
+
+		System.out.println("" + ++i);
+	} 
+	
+	
+}
+
+
+
+
+
+
+ 	
+class log extends JFrame {
+
+	
+	
+
+
+//   Container container;
+
+ 	
+  //Timer timer = new Timer(); 
+	 Font font;
+      JTextArea area,area1;
+	
+	 
+	JRadioButton rbutton[]=new JRadioButton[4];
+	JButton but,nextB,prevB,view;
+	JLabel reg,name,id,time;                 
+	ButtonGroup bgroup;
+	
+	
+	//bgroup = new ButtonGroup();
+	JTextField user,roll;
+
+
+	int question = 1;
+        int count = 0;
+         int  flag = 0,flag1 = 0;
+       
+	
+		
+	
+	
+		 Container container;
+		
+ 
+
+
+   log()
+   {
+   
+   	
+   	
+   	
+   	     
+    
+   
+
+   	bgroup = new ButtonGroup();
+  
+
+			rbutton[0]=new JRadioButton();
+				 bgroup.add(rbutton[0]);
+				 
+			rbutton[1]=new JRadioButton();
+				 bgroup.add(rbutton[1]);
+				 
+			rbutton[2]=new JRadioButton();
+				 bgroup.add(rbutton[2]);
+				 
+			rbutton[3]=new JRadioButton();
+				 bgroup.add(rbutton[3]);
+				 
+				 
+				 
+	
+   	    
+   	
+		nextB=new JButton ("Next");
+		prevB=new JButton("Previous");
+			view= new JButton("View Result");
+	
+
+		
+	
+	//	setSize(600,350);
+   
+	
+	
+		
+	
+	   
+	//	container = this.getContentPane();
+	
+	 	container = this.getContentPane();
+	//	container1 = this.getContentPane();
+			
+		container.setBackground(Color.blue);
+		container.setLayout(null);
+		//container1.setBackground(Color.green);
+	//	container1.setLayout(null);
+		font = new Font("Tahoma",Font.BOLD,22);
+		but = new JButton("Start Exam");
+	       	but.setEnabled(false);
+		
+     	but.setBounds(230,280,250,50);
+     but.setBackground(Color.yellow);
+    // but.addActionListener(this);
+   
+     	 container.add(but);
+     	 reg = new JLabel("Registration Page");
+         reg.setForeground(Color.green);
+         reg.setBounds(200,28,250,50);
+         reg.setFont(font);
+        name = new JLabel("User Name");
+        name.setForeground(Color.green);
+         name.setBounds(39,82,250,50);
+         name.setFont(font);
+           	id = new JLabel("ID :");
+         id.setForeground(Color.green);
+        id.setBounds(39,160,250,50);
+        id.setFont(font);
+   
+   
+     
+     	 container.add(reg);
+     	 container.add(name);
+     	 container.add(id);
+     
+     	 
+     	 user = new JTextField();
+     	 user.setBounds(230,89,310,40);
+     	 user.setFont(font);
+     	 container.add(user);
+     	 roll = new JTextField();
+     	 roll.setBounds(230,170,310,40);
+     	 roll.setFont(font);
+     	 container.add(roll);
+     	 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     	// area = new JTextArea();
+		// area.setBounds(10,340,200,200);
+		// area.setBackground(Color.green);
+		//	File f = new File("C:\\Users\\Lenovo\\Desktop\\PW1\\ID.text");
+			//BufferedReader reader = new BufferedReader(new FileReader(f));
+		
+			
+		     roll.addActionListener(new ActionListener() {
+			String Data;
+		 		 	public void actionPerformed(ActionEvent e) 
+		 		 	{
+		 		 	
+		 		  Data = roll.getText();
+		 		  	int n = Integer.parseInt(roll.getText());
+		 		     if(n%2!=0 && n<=70)
+		 		     {
+		 		     	 but.setEnabled(true);
+		 		     	// flag = 0;
+		 		     }
+		 		     else
+		 		     	
+		 		     	{
+		 		     	
+		 		     	    JOptionPane.showMessageDialog(area,"You are not eligble for this exam.");
+		 		     }
+		 		  	
+		 		 	}
+		     });
+		    // /*
+		     
+		         user.addActionListener(new ActionListener() {
+			       String Data1;
+		 		 	public void actionPerformed(ActionEvent e) 
+		 		 	{
+		 		 	      Data1 =  user.getText();
+		 		 	      // int len = Data1.length();
+		 		 	     
+		 		 	      // if(  len > 0)
+		 		 	      // {
+		 		 	      // 	  flag1 = 1;
+		 		 	      // }
+		 		 	       
+		 		 	      // System.out.println(Data1);
+		 	
+		 		 	      
+		 		 	         //if(flag == 0 &&  flag1 == 1)
+		   // {
+		    	//but.setEnabled(true);
+		    //}
+
+
+		 		     	
+		 		     	
+		 		     	
+		 		     	  
+		 		     }
+		 		  	
+		 		 	
+		     });
+		    // */
+		 
+	
+   
+
+		// if(flag ==1 && flag1 ==1)
+	//	 {
+		//        but.setEnabled(true);
+		      //  System.out.println("hgvmh");
+		      
+		
+              but.addActionListener(new ActionListener() {
+              	
+              	
+              //	Timer timer = new Timer(); 
+              	
+	
+              	
+		 	
+		 	
+		 		public void actionPerformed(ActionEvent e)
+		 	{
+		 		
+		 		    Frame f = new Frame();
+		 
+	      // ButtonGroup.getContentpane(f);
+		 		    f.setSize(1000,1000);
+		 		   
+		 		    	rbutton[0].setBounds(50,80,120,20);
+		     rbutton[1].setBounds(50,110,120,20);
+	   	  rbutton[2].setBounds(50,140,120,20);
+	     	rbutton[3].setBounds(50,170,120,20);
+
+	     	nextB.setBounds(100,240,100,30);
+		   prevB.setBounds(270,240,100,30);
+		 view.setBounds(230,359,250,50);
+	     
+		        setLayout(null);
+		        area = new JTextArea();
+	         	 area.setBounds(1,1,1000,1000);
+		       area.setBackground(Color.green);
+		       //  area1 = new JTextArea();
+	         //	 area1.setSize(10,10);
+		      // area1.setBackground(Color.red);
+		       
+		       
+   
+		 		     
+		 		
+		 		      area.add(nextB);
+		 		      area.add(prevB);
+		 		      area.add(view);
+		 		      view.setEnabled(false);
+		 		    
+		 		         f.add(area);
+		 		         JLabel time = new JLabel();
+		 		        // f.add(time);
+		 		      
+		                  quiz();
+		                  area.setFont(font);
+		                  f.setVisible(true);
+		                  	
+		                  	
+		                  	
+	//	TimerTask task = new Helper(); 
+			
+		
+	//	timer.schedule(task, 1000, 1000); 
+		                  
+		                  		
+		                  
+} 
+          
+		
+		                  	
+		                  	
+		             
+		 	
+		 //	)};
+   
+		                 //	public void actionPerformed(ActionEvent e)
+		                 //	{
+		                 		
+		                 //	}
+      });
+		 
+        
+           nextB.addActionListener(new ActionListener()
+      
+	
+		{
+		
+		  public void actionPerformed(ActionEvent e)
+			{
+					if(varify())
+				{
+	         	count=count+1;
+	         	
+				}
+	     		
+				question++;
+				if(question == 10)
+				{
+					
+					//area.add(view);
+					view.setEnabled(true);
+					nextB.setEnabled(false);
+					prevB.setEnabled(false);
+				}
+				quiz();
+				
+				}
+			
+			
+	}); 
+		prevB.addActionListener(new ActionListener()
+      
+	
+		{
+		
+		  public void actionPerformed(ActionEvent e)
+			{
+				area.setText("");
+				question--;
+				if(varify())
+				{
+	         	count=count-1;
+				}
+	         	
+				//}
+				quiz();
+				nextB.setEnabled(true);
+				if(question==10)
+				{
+					nextB.setEnabled(false);
+					
+				}
+				view.setEnabled(false);
+			}
+			
+	});
+	
+        view.addActionListener(new ActionListener()
+      
+	
+		{
+		
+		  public void actionPerformed(ActionEvent e)
+		  	      
+			{
+				//MyThread obj = new MyThread();
+                  //   obj.start();
+                  //String h = Data1;
+                  int per = 10*count;
+			      	JOptionPane.showMessageDialog(area,"You have got "+ count+"\n Accuracy : "+per+"%");
+			}
+			
+	});
+	 //Thread thread = new Thread();
+        	//Thread thread = new Thread();
+  
+   }
+
+  
+		 		  
+		 	
+	void quiz()
+	{
+			
+			
+	
+	
+	
+		if(question==1)
+		{
+			
+	
+         	area.setText("Que1:Which one is the Independence day of Bangladesh");
+			rbutton[0].setText("16 December");
+			area.add(rbutton[0]);
+			rbutton[1].setText("21 Febuary");
+			area.add(rbutton[1]);
+			rbutton[2].setText("26 March");
+			area.add(rbutton[2]);
+			rbutton[3].setText("7 March");	
+				area.add(rbutton[3]);
+				//question++;
+		}
+		if(question==2)
+		{
+	
+	
+			area.setText("Que2: Who invented Radio?");
+			rbutton[0].setText("Newton");
+			area.add(rbutton[0]);
+			rbutton[1].setText("Edison");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Charls Bebej");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Marconi");
+				area.add(rbutton[3]);
+		}
+			if(question==3)
+		{
+	
+	
+            area.setText("Que3: Who has the highest individual innings in test cricket?");
+			rbutton[0].setText("Stib Wah");
+			area.add(rbutton[0]);
+			rbutton[1].setText("Brain Lara");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Sachin");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Sangakara");
+				area.add(rbutton[3]);
+		}
+				if(question==4 )
+		{
+	
+	
+            area.setText("Que4: Capital of India");
+			rbutton[0].setText("New Dellhi");
+			area.add(rbutton[0]);
+			rbutton[1].setText("Dhaka");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Sydnee");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Chennai");
+				area.add(rbutton[3]);
+		}
+		if(question == 5)
+		{
+			      area.setText("Que5:Which one is not a OOP Language ");
+			rbutton[0].setText("C");
+			area.add(rbutton[0]);
+			rbutton[1].setText("C++");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Java");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Python");
+				area.add(rbutton[3]);
+			
+		}
+			if(question == 6)
+		{
+			   area.setText("Que 6:Smallest memory-");
+			rbutton[0].setText("Bit");
+			area.add(rbutton[0]);
+			rbutton[1].setText("MB");
+				area.add(rbutton[1]);
+			rbutton[2].setText("KB");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Byte");
+				area.add(rbutton[3]);
+			
+		}
+			if(question == 7)
+		{
+			      area.setText("Que 7:Headquarter of Google is situated in");
+			rbutton[0].setText("California");
+			area.add(rbutton[0]);
+			rbutton[1].setText("London");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Lisbon");
+				area.add(rbutton[2]);
+			rbutton[3].setText("New York");
+				area.add(rbutton[3]);
+			
+		}
+				if(question == 8)
+		{
+			      area.setText("Que 8: National fruit of BD ");
+			rbutton[0].setText("Mango");
+			area.add(rbutton[0]);
+			rbutton[1].setText("Jackfruit");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Apple");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Chery");
+				area.add(rbutton[3]);
+			
+		}
+					if(question == 9)
+		{
+			      area.setText("Que 9: The rational device of Russia ?");
+			rbutton[0].setText("Rubol");
+			area.add(rbutton[0]);
+			rbutton[1].setText("Pound");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Doller");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Dirham");
+				area.add(rbutton[3]);
+			
+		}
+				if(question == 10)
+		{
+			      area.setText("Que 10: The longest river of Bangladesh ?");
+			rbutton[0].setText("Padma");
+			area.add(rbutton[0]);
+			rbutton[1].setText("Meghna");
+				area.add(rbutton[1]);
+			rbutton[2].setText("Zamuna");
+				area.add(rbutton[2]);
+			rbutton[3].setText("Surma");
+				area.add(rbutton[3]);
+			
+		}
+		
+		
+	
+	
+	
+	
+	}
+  boolean 	varify()
+	{
+		if(question==1)
+			//return(rbutton[2].isSelected());
+		{
+		
+			if(rbutton[2].isSelected())
+				return true;
+		}
+		if(question==2)
+		{
+		
+			if(rbutton[3].isSelected())
+				return true;
+		}
+		if(question==3)
+		{
+			if(rbutton[1].isSelected())
+				
+				return true;
+		}
+				
+		if(question==4)
+		{
+		
+			if(rbutton[0].isSelected())
+				return true;
+		}
+				if(question==5)
+				{
+				
+			if(rbutton[0].isSelected())
+				
+				return true;
+				
+				}
+				if(question==6)
+				{
+				
+			  if(rbutton[3].isSelected())
+			  	
+			  	return true;
+			  	
+				}
+				if(question==7)
+				{
+				
+			   if(rbutton[0].isSelected())
+			   	
+			   		return true;
+				}
+				if(question==8)
+				{
+				
+			   if(rbutton[1].isSelected())
+			   	
+			   	return true;
+				}
+				
+					if(question==9)
+				{
+				
+			   if(rbutton[0].isSelected())
+			   	
+			   	return true;
+				}
+						if(question==10)
+				{
+				
+			   if(rbutton[3].isSelected())
+			   	
+			   	return true;
+			   	
+				}
+			return false;
+	}
+	
+   
+	
+
+public static void main(String args[])throws Exception {
+	
+
+ 
+	
+	int n ;
+//	n = ob.nextInt();
+ int arr[];
+    arr = new int[8];
+    
+
+	/*
+	 	File f = new File("C:\\Users\\Lenovo\\Desktop\\PW1\\ID.text");
+		BufferedReader reader = new BufferedReader(new FileReader(f));
+		FileWriter f1 = new FileWriter("C:\\Users\\Lenovo\\Desktop\\PW1\\ID.text");
+		BufferedWriter writer = new BufferedWriter(f1);
+	
+		for(int i = 0;i<7;i++)
+		{
+		
+	        arr[i] = Integer.parseInt(reader.readLine());
+      
+           } 
+         
+             		for(int i = 0;i<7;i++)
+		{
+		
+	     
+    
+             writer.write(arr[i]) ; 
+}                                          
+                                        
+    
+    	      
+               //writer.write(arr[0]);                                       
+    
+    writer.close();
+    */
+   
+   
+	 
+   
+	
+		
+	 log frame = new log();
+	frame.setVisible(true);
+	//	frame.setBounds(100,50,600,650);
+     	frame.setSize(1000,1000);
+	 }
+     
+     		
+       
+     
+}
+   
+
+
+  
+
+
+
